@@ -18,6 +18,7 @@ add_library(common-ggml STATIC common-ggml.cpp)
 target_link_libraries(common-ggml PRIVATE ggml)
 target_include_directories(common-ggml PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
+add_subdirectory(demo)
 add_subdirectory(yolo)
 
 if (NOT GGML_BACKEND_DL)
