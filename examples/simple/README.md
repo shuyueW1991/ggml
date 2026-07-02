@@ -59,3 +59,49 @@ ggml\\_mul\\_mat(
 $$
 
 The `simple-ctx` doesn't support gpu acceleration. `simple-backend` demonstrates how to use other backends like CUDA and Metal.
+
+
+Build from the project root:
+
+```bash
+cmake -S . -B build -DGGML_BUILD_EXAMPLES=ON
+cmake --build build --config Release -j 8 --target simple-ctx simple-backend
+```
+
+where 
+`-S` means the source dir,
+`-B` means the build dir.
+
+Run from the project root build directory:
+
+```bash
+./build/bin/simple-ctx
+./build/bin/simple-backend
+```
+
+
+
+OR，
+Build directly from `examples/simple`:
+
+```bash
+cd examples/simple
+cmake -S . -B build
+cmake --build build --config Release -j 8
+```
+
+Run from the local `examples/simple` build directory:
+
+```bash
+./build/simple-ctx
+./build/simple-backend
+```
+
+
+
+
+If you want to build only `simple-ctx` from `examples/simple`:
+
+```bash
+cmake --build build --target simple-ctx --config Release -j 8
+```
